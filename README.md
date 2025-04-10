@@ -36,21 +36,27 @@ cd biblioteca_project
 
 
 Crea y activa un entorno virtual:
+
 python -m venv env
 
 
 # En Windows:
+
 env\Scripts\activate
 # En Linux/Mac:
+
 source env/bin/activate
 
 
 Instala las dependencias:
+
 pip install -r requirements.txt
 
 
 Realiza las migraciones: 
+
 python manage.py makemigrations
+
 python manage.py migrate
 
 
@@ -59,14 +65,22 @@ python manage.py createsuperuser
 
 
 Ejecuta el servidor:  
+
 python manage.py runserver
 
 
 Abre el navegador en:
+
 http://127.0.0.1:8000/admin
 
 
 (Opcional) Ejecuta el script para cargar datos iniciales:
 
 python manage.py shell
+
 >>> exec(open('poblar_datos.py').read())
+
+![1](https://github.com/user-attachments/assets/aa44aa1f-7a47-442c-b250-67082ff636e6)
+![2](https://github.com/user-attachments/assets/816440eb-ee2b-48e1-a728-0c80f522a901)
+![3](https://github.com/user-attachments/assets/84ba9518-3609-48c7-8daa-9664a5a5566d)
+![4](https://github.com/user-attachments/assets/f464b1d5-3150-44b1-85f3-050b2c9dd67a)
