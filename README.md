@@ -30,7 +30,7 @@ Este es un proyecto web desarrollado con Django como parte de un ejercicio prác
 
 1. **Clona este repositorio:**
 
-git clone https://github.com/tu-usuario/biblioteca_project.git
+git clone https://github.com/Titsu-Maki/biblioteca_project.git
 cd biblioteca_project
 
 
