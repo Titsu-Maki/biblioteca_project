@@ -1,6 +1,10 @@
 from django.utils import timezone
 from biblioteca.models import Autor, Libro, Resena
 
+Autor.objects.all().delete()
+Libro.objects.all().delete()
+Resena.objects.all().delete()
+
 
 autor1 = Autor.objects.create(nombre="Gabriel García Márquez", nacionalidad="Colombia")
 autor2 = Autor.objects.create(nombre="Isabel Allende", nacionalidad="Chile")

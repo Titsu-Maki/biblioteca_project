@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Validadores personalizados
 def validar_nombre_no_vacio(value):
@@ -35,8 +36,11 @@ class Libro(models.Model):
 class Resena(models.Model):
     libro = models.ForeignKey(Libro, on_delete=models.CASCADE, related_name='resenas')
     texto = models.TextField()
-    calificacion = models.IntegerField(validators=[validar_calificacion])
+    calificacion = models.FloatField(
+    validators=[MinValueValidator(0.0), MaxValueValidator(5.0)]
+)
     fecha = models.DateField(default=timezone.now)
 
     def __str__(self):
         return f'{self.libro.titulo} - {self.calificacion}/5'
+    
