@@ -19,7 +19,7 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Libro
-        fields = '__all__'  # puedes usar una lista explícita si prefieres
+        fields = '__all__'
 
     # Método que obtiene las 5 reseñas más recientes del libro
     def get_recent_reviews(self, obj):

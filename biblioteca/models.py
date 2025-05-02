@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-# Validadores personalizados
+
 def validar_nombre_no_vacio(value):
     if not value.strip():
         raise ValidationError('El nombre no puede estar vacío o ser solo espacios.')

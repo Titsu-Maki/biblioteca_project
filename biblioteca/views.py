@@ -13,7 +13,7 @@ class AutorViewSet(viewsets.ModelViewSet):
     serializer_class = AutorSerializer
 
 class BookViewSet(viewsets.ModelViewSet):
-    queryset = Libro.objects.all()  # ✅ necesario para evitar error del router
+    queryset = Libro.objects.all()
     serializer_class = BookSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     # Activamos filtros por campos específicos del modelo (autor y fecha de publicación)
