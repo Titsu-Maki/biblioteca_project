@@ -16,7 +16,9 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Libro.objects.all()  # ✅ necesario para evitar error del router
     serializer_class = BookSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
+    # Activamos filtros por campos específicos del modelo (autor y fecha de publicación)
     filterset_fields = ['autor', 'fecha_publicacion']
+    # Permitimos ordenar los resultados por título o fecha de publicación
     ordering_fields = ['titulo', 'fecha_publicacion']
 
     def get_queryset(self):
@@ -24,6 +26,8 @@ class BookViewSet(viewsets.ModelViewSet):
             return Libro.objects.order_by('-fecha_publicacion')[:10]
         return super().get_queryset()
 
+    # Ruta adicional que no forma parte del CRUD. Se usa para calcular
+    # la calificación promedio de un libro específico.
     @action(detail=True, methods=['get'])
     def average_rating(self, request, pk=None):
         book = self.get_object()
